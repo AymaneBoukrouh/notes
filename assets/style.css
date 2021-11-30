@@ -1,0 +1,32 @@
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #eee;
+	padding: 30px;
+}
+
+.main-container {
+	background-color: white;
+	border-radius: 5px;
+	width: 600px;
+	padding: 30px;
+}
+
+//.btn-primary {
+	background-color: #EC4646;
+	border-color: #EC4646;
+}
+
+//.btn-primary:hover {
+	background-color: red;
+	border-color: red;
+}
+
+.empty-note {
+	background-color: rgb(200, 200, 200, 0.1);
+	border-radius: 5px;
+	width: 100%;
+	padding: 10px;
+	margin: 20px 0;
+}
