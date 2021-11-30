@@ -13,14 +13,20 @@ body {
 	padding: 30px;
 }
 
-//.btn-primary {
-	background-color: #EC4646;
-	border-color: #EC4646;
+.note {
+	background-color: rgb(200, 200, 200, 0.1);
+	border-radius: 5px;
+	margin: 20px 0;
+	padding: 10px;
 }
 
-//.btn-primary:hover {
-	background-color: red;
-	border-color: red;
+.note-title {
+	font-size: 24px;
+	color: black;
+}
+
+.note-content {
+	white-space: pre-wrap;	
 }
 
 .empty-note {
