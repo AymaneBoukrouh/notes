@@ -1,6 +1,12 @@
 <?php
 
-$mysqli = new mysqli('localhost', 'aymane', 'pass1234', 'php_notes');
+$config = require_once('../includes/config.php');
+$HOST = $config['HOST'];
+$USERNAME = $config['USERNAME'];
+$PASSWORD = $config['PASSWORD'];
+$DB_NAME = $config['DB_NAME'];
+
+$mysqli = new mysqli($HOST, $USERNAME, $PASSWORD, $DB_NAME);
 
 $query = "
 	UPDATE note
