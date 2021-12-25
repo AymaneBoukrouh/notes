@@ -7,6 +7,27 @@ body {
 	height: 100vh;
 }
 
+header {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	background: none;
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: middle;
+}
+
+.github-link {
+	font-size: 16px;
+	color: rgb(60, 60, 60);
+}
+
+.github-link:hover {
+	color: rgb(60, 60, 60);
+}
+
 .main-container {
 	background-color: white;
 	border-radius: 5px;

@@ -9,4 +9,5 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+  <header><a href="https://www.github.com/AymaneBoukrouh/PHP-Notes/" class="github-link"><i class="bi-github"></i></a></header>
   <div class="main-container">
