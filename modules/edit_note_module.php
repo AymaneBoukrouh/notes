@@ -30,12 +30,12 @@ $query = "
 
 	WHERE id = ".$_GET['id'].";";
 
-$mysqli->query($query);
+$mysqli->multi_query($query);
 
 $mysqli->commit();
 $mysqli->close();
 
 
-header('Location: /templates/notes.php');
+header('Location: /templates/note.php?id='.$_GET['id']);
 
 ?>

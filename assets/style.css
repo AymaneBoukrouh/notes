@@ -4,13 +4,16 @@ body {
 	justify-content: center;
 	background-color: #eee;
 	padding: 30px;
+	height: 100vh;
 }
 
 .main-container {
 	background-color: white;
 	border-radius: 5px;
-	width: 600px;
+	width: 800px;
 	padding: 30px;
+	max-height: calc(100vh - 60px);
+	overflow-y: scroll
 }
 
 .note {
@@ -23,10 +26,13 @@ body {
 .note-title {
 	font-size: 24px;
 	color: black;
+	text-decoration: none;
 }
 
 .note-content {
-	white-space: pre-wrap;	
+	white-space: pre-wrap;
+	max-height: 200px;
+	overflow-y: scroll;
 }
 
 .empty-note {
@@ -35,4 +41,20 @@ body {
 	width: 100%;
 	padding: 10px;
 	margin: 20px 0;
+}
+
+.edit-link {
+	color: blue;
+}
+
+.edit-link:hover {
+	color: rgb(100, 100, 255);
+}
+
+.del-link {
+	color: red;
+}
+
+.del-link:hover {
+	color: rgb(255, 100, 100);
 }

@@ -18,6 +18,6 @@ require_once('../includes/header.php');
         <label class="form-label" for="note-content">Content</label>
         <textarea class="form-control" name="note-content" rows="3"><?= $note['content']; ?></textarea>
       </div>
-      <input type="submit" class="btn btn-primary w-100" value="Edit">
+      <input type="submit" class="btn btn-primary w-100" value="Save">
     </form>
 <?php require_once('../includes/footer.php'); ?>
