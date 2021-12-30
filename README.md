@@ -10,3 +10,6 @@ The database used is MySQL, authentication details are located in `includes/conf
 
 Initiate the database using the SQL file located in `assets/create_db.sql`
 
+### Link
+
+The website is hosted on: [notes.aymaneboukrouh.com](https://notes.aymaneboukrouh.com)
