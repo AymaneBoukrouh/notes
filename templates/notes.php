@@ -25,7 +25,7 @@ require_once('../includes/header.php');
     </div>
     <?php endforeach; ?>
     <?php if (!$NOTES): ?>
-    <div class="empty-note text-muted">You don't have any notes yet!</div>
+    <div class="empty-note text-muted">You don't have any notes yet, click below to add a new Note!</div>
     <?php endif; ?>
     <a class="btn btn-primary w-100" href="add_note.php">+</a>
 <?php require_once('../includes/footer.php'); ?>
