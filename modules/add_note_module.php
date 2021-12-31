@@ -13,13 +13,8 @@ $content = $_POST['note-content'];
 $creation_datetime = "$year-$month-$day $hours:$minutes:$seconds";
 
 
-$config = require_once('../includes/config.php');
-$HOST = $config['HOST'];
-$USERNAME = $config['USERNAME'];
-$PASSWORD = $config['PASSWORD'];
-$DB_NAME = $config['DB_NAME'];
-
-$mysqli = new mysqli($HOST, $USERNAME, $PASSWORD, $DB_NAME);
+$DB = require_once('../includes/config.php');
+$mysqli = new mysqli($DB['HOST'], $DB['USER'], $DB['PASS'], $DB['NAME']);
 
 $query = "
 	INSERT INTO note (title, content, creation_datetime)

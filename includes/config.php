@@ -1,10 +1,11 @@
 <?php
 
+
 return Array(
-	'HOST' => '',
-	'USERNAME' => '',
-	'PASSWORD' => '',
-	'DB_NAME' => ''
+	'HOST' => $_SERVER['DB_HOST'],
+	'USER' => $_SERVER['DB_USER'],
+	'PASS' => $_SERVER['DB_PASS'],
+	'NAME' => $_SERVER['DB_NAME']
 );
 
 ?>
