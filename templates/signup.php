@@ -5,39 +5,57 @@ require_once('../includes/header.php');
 
 ?>
     <div class="text-center mb-3"><h3>Sign Up</h3></div>
-    <form action="" method="POST">
+    <form action="../modules/signup_module.php" method="POST">
       <div class="row mb-3">
         <div class="col">
-          <label class="form-label" for="first-name">First Name</label>
+          <label class="form-label mb-0" for="first-name">First Name</label>
+          <div class="invalid-feedback d-block" id="first-name-validation-feedback">
+            This field is required.
+          </div>
           <input type="text" class="form-control" name="first-name">
         </div>
         <div class="col">
-          <label class="form-label" for="last-name">Last Name</label>
-          <input type="password" class="form-control" name="last-name">
+          <label class="form-label mb-0" for="last-name">Last Name</label>
+          <div class="invalid-feedback d-block" id="last-name-validation-feedback">
+            This field is required.
+          </div>
+          <input type="text" class="form-control" name="last-name">
         </div>
       </div>
       <div class="row mb-3">
         <div class="col">
-          <label class="form-label" for="username">Username</label>
+          <label class="form-label mb-0" for="username">Username</label>
+          <div class="invalid-feedback d-block" id="username-validation-feedback">
+            This field is required.
+          </div>
           <input type="text" class="form-control" name="username">
         </div>
         <div class="col">
-          <label class="form-label" for="email">Email</label>
-          <input type="password" class="form-control" name="email">
+          <label class="form-label mb-0" for="email">Email</label>
+          <div class="invalid-feedback d-block" id="email-validation-feedback">
+            This field is required.
+          </div>
+          <input type="text" class="form-control" name="email">
         </div>
       </div>
       <div class="row mb-3">
         <div class="col">
-          <label class="form-label" for="password">Password</label>
-          <input type="text" class="form-control" name="password">
+          <label class="form-label mb-0" for="password">Password</label>
+          <div class="invalid-feedback d-block" id="password-validation-feedback">
+            This field is required.
+          </div>
+          <input type="password" class="form-control" name="password">
         </div>
         <div class="col">
-          <label class="form-label" for="confirm-password">Confirm Password</label>
+          <label class="form-label mb-0" for="confirm-password">Confirm Password</label>
+          <div class="invalid-feedback d-block" id="confirm-password-validation-feedback">
+            This field is required.
+          </div>
           <input type="password" class="form-control" name="confirm-password">
         </div>
       </div>
       <div class="mb-3">
-        <input type="submit" class="btn btn-primary" value="Sign Up">
+        <input type="submit" class="btn btn-primary" value="Sign Up" id="signup-submit" disabled>
         <span class="mx-2">Already have an account? <a href="login.php" style="text-decoration: none">Log In</a></span>
       </div>
     </form>
