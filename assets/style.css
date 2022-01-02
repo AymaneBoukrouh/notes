@@ -33,7 +33,21 @@ header {
 	width: 800px;
 	padding: 30px;
 	max-height: calc(100vh - 60px);
-	overflow-y: scroll
+	overflow-y: auto;
+}
+
+.user-menu-link {
+	font-size: 24px;
+}
+
+.user-menu-icon {
+	color: #bbb;
+}
+
+.go-back-button {
+	position: absolute;
+	top: 30px;	
+	right: 30px;
 }
 
 .note {

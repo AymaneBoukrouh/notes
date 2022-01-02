@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,4 +12,17 @@
 </head>
 <body>
   <header><a href="https://www.github.com/AymaneBoukrouh/PHP-Notes/" class="github-link"><i class="bi-github"></i></a></header>
-  <div class="main-container">
+  <div class="main-container position-relative">
+    <?php if (!in_array(basename($_SERVER['PHP_SELF']), ['login.php', 'signup.php'])): ?>
+    <div class="dropdown user-men">
+      <a class="user-menu-link" href="#" role="button" id="user-dropdown-menu" data-bs-toggle="dropdown" data-bs-offset="0,10" aria-expanded="false">
+        <i class="user-menu-icon bi-person-circle"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="user-dropdown-menu">
+        <li><a class="dropdown-item" href="/templates/profile.php?id=<?= $_SESSION['user_id']; ?>">Profile</a></li>
+        <li><a class="dropdown-item" href="/templates/notes.php">Notes</a></li>
+        <li><a class="dropdown-item" href="/templates/add_note.php">Add Note</a></li>
+        <li><a class="dropdown-item text-danger" href="/templates/logout.php">Log Out</a></li>
+      </ul>
+    </div>
+    <?php endif; ?>

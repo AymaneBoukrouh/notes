@@ -1,11 +1,18 @@
 <?php
 
+session_start();
+
+if (isset($_SESSION['user_id'])) exit(header('Location: /templates/profile.php?id='.$_SESSION['user_id']));
+
 $TITLE = 'Notes';
 require_once('../includes/header.php');
 
 ?>
     <div class="text-center mb-3"><h3>Log In</h3></div>
-    <form action="" method="POST">
+    <form action="../modules/login_module.php" method="POST">
+      <?php if(isset($_SESSION['flash_message'])): ?>
+      <div class="alert alert-<?= $_SESSION['flash_message']['status'] ?>"><?= $_SESSION['flash_message']['message']; ?></div>
+      <?php unset($_SESSION['flash_message']); endif; ?>
       <div class="row mb-3">
         <div class="col">
           <label class="form-label" for="username-or-email">Username or Email</label>
@@ -16,9 +23,13 @@ require_once('../includes/header.php');
           <input type="password" class="form-control" name="password">
         </div>
       </div>
-      <div class="mb-3">
-        <input type="submit" class="btn btn-primary" value="Log In">
-        <span class="mx-2">Don't have an account? <a href="signup.php" style="text-decoration: none">Sign Up</a></span>
+      <div class="row mb-3">
+        <div class="col-auto">
+          <input type="submit" class="col btn btn-primary" value="Log In">
+        </div>
+        <div class="col">
+          <span class="col d-flex align-items-center h-100">Don't have an account?&nbsp;<a href="signup.php" style="text-decoration: none">Sign Up</a></span>
+        </div>
       </div>
     </form>
 <?php require_once('../includes/footer.php'); ?>

@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+if (isset($_SESSION['user_id']))
+  exit(header('Location: /templates/profile.php?id='.$_SESSION['user_id']));
+
 $TITLE = 'Notes';
 require_once('../includes/header.php');
 
@@ -54,9 +59,13 @@ require_once('../includes/header.php');
           <input type="password" class="form-control" name="confirm-password">
         </div>
       </div>
-      <div class="mb-3">
-        <input type="submit" class="btn btn-primary" value="Sign Up" id="signup-submit" disabled>
-        <span class="mx-2">Already have an account? <a href="login.php" style="text-decoration: none">Log In</a></span>
+      <div class="row mb-3">
+        <div class="col-auto">
+          <input type="submit" class="btn btn-primary" value="Sign Up" id="signup-submit" disabled>
+        </div>
+        <div class="col">
+          <span class="d-flex align-items-center h-100">Already have an account?&nbsp;<a href="login.php" style="text-decoration: none">Log In</a></span>
+        </div>
       </div>
     </form>
 <?php require_once('../includes/footer.php'); ?>

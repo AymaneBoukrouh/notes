@@ -1,1 +1,1 @@
-<?php header('Location: templates/notes.php') ?>
+<?php header('Location: templates/login.php') ?>

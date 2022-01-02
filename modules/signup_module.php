@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $first_name = $_POST['first-name'];
 $last_name = $_POST['last-name'];
 $username = $_POST['username'];
@@ -24,7 +26,11 @@ $mysqli->commit();
 $mysqli->close();
 
 
-// flash account created!
+$_SESSION['flash_message'] = Array(
+	'message' => 'Your account has been successfully created!',
+	'status' => 'success'
+);
+
 header('Location: /templates/login.php');
 
 ?>
