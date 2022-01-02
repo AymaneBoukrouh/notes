@@ -6,8 +6,7 @@ $TITLE = $note['title'];
 require_once('../includes/header.php');
 
 ?>
-    <a class="btn btn-primary" href="notes.php">Go Back To Notes</a>
-    <br><br>
+    <a class="btn btn-primary go-back-button" href="notes.php">Go Back To Notes</a>
     <div class="text-center mb-3"><h3>Edit Note</h3></div>
     <form action="../modules/edit_note_module.php?id=<?= $note['id'] ?>" method="POST">
       <div class="mb-3">

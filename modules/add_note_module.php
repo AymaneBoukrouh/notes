@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $current_date = getdate();
 $year = strval($current_date['year']);
 $month = str_pad(strval($current_date['mon']), 2, '0', STR_PAD_LEFT);
@@ -16,9 +18,10 @@ $creation_datetime = "$year-$month-$day $hours:$minutes:$seconds";
 $DB = require_once('../includes/config.php');
 $mysqli = new mysqli($DB['HOST'], $DB['USER'], $DB['PASS'], $DB['NAME']);
 
+$user_id = $_SESSION['user_id'];
 $query = "
-	INSERT INTO note (title, content, creation_datetime)
-	VALUES ('$title', '$content', '$creation_datetime');
+	INSERT INTO note (user_id, title, content, creation_datetime)
+	VALUES ($user_id, '$title', '$content', '$creation_datetime');
 ";
 
 $mysqli->query($query);

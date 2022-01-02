@@ -1,13 +1,16 @@
 <?php
 
+session_start();
+
 require_once('../modules/get_note_module.php');
+
+if ($note['user_id'] != $_SESSION['user_id']) exit(header('Location: /templates/notes.php'));
 
 $TITLE = $note['title'];
 require_once('../includes/header.php');
 
 ?>
-    <a class="btn btn-primary" href="notes.php">Go Back To Notes</a>
-    <br><br>
+    <a class="btn btn-primary go-back-button" href="notes.php">Go Back To Notes</a>
     <table>
       <tr><td>Created at:&emsp;</td><td><?= $note['creation_datetime']; ?></td></tr>
       <tr><td><?php if(isset($note['last_edit_datetime'])) echo 'Edited at:&emsp;</td><td>'.$note['last_edit_datetime']; ?></td></tr>

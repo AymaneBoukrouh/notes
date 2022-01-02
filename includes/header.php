@@ -14,15 +14,16 @@
   <header><a href="https://www.github.com/AymaneBoukrouh/PHP-Notes/" class="github-link"><i class="bi-github"></i></a></header>
   <div class="main-container position-relative">
     <?php if (!in_array(basename($_SERVER['PHP_SELF']), ['login.php', 'signup.php'])): ?>
-    <div class="dropdown user-men">
+    <div class="dropdown">
       <a class="user-menu-link" href="#" role="button" id="user-dropdown-menu" data-bs-toggle="dropdown" data-bs-offset="0,10" aria-expanded="false">
         <i class="user-menu-icon bi-person-circle"></i>
       </a>
+      <span class="user-menu-name"><?= $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></span>
       <ul class="dropdown-menu" aria-labelledby="user-dropdown-menu">
         <li><a class="dropdown-item" href="/templates/profile.php?id=<?= $_SESSION['user_id']; ?>">Profile</a></li>
         <li><a class="dropdown-item" href="/templates/notes.php">Notes</a></li>
         <li><a class="dropdown-item" href="/templates/add_note.php">Add Note</a></li>
-        <li><a class="dropdown-item text-danger" href="/templates/logout.php">Log Out</a></li>
+        <li><a class="dropdown-item text-danger logout-button" href="/templates/logout.php">Log Out</a></li>
       </ul>
     </div>
     <?php endif; ?>

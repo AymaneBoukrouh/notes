@@ -38,16 +38,27 @@ header {
 
 .user-menu-link {
 	font-size: 24px;
+	text-decoration: none;
 }
 
-.user-menu-icon {
-	color: #bbb;
+.user-menu-icon:before {
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+
+.user-menu-name {
+	font-size: 24px;
 }
 
 .go-back-button {
 	position: absolute;
 	top: 30px;	
 	right: 30px;
+}
+
+.logout-button:active {
+	background-color: #dc3545 !important;
+	color: white !important;
 }
 
 .note {

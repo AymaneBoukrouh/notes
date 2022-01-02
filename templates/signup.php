@@ -2,8 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION['user_id']))
-  exit(header('Location: /templates/profile.php?id='.$_SESSION['user_id']));
+if (isset($_SESSION['user_id'])) exit(header('Location: /templates/notes.php'));
 
 $TITLE = 'Notes';
 require_once('../includes/header.php');
