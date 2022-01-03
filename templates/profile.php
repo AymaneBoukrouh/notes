@@ -6,26 +6,47 @@ $TITLE = 'Notes';
 require_once('../includes/header.php');
 
 ?>
-    <div class="text-center mb-3"><h3><?= $user['first_name'].' '.$user['last_name']; ?></h3></div>
+    <div class="text-center mb-3"><h3>Profile</h3></div>
     <form action="../modules/edit_profile_module.php" method="POST">
-      <div class="row mb-3">
+      <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="first-name">First Name</label>
-        <input type="text" class="col form-control" name="first-name" value="<?= $user['first_name']; ?>" disabled>
+        <div class="col">
+          <div class="form-floating mx-0">
+            <input type="text" class="form-control" name="first-name" placeholder="" disabled>
+            <label for="first-name" id="first-name-validation-feedback"><?= $user['first_name']; ?></label>
+          </div>
+        </div>
       </div>
-      <div class="row mb-3">
+      <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="last-name">Last Name</label>
-        <input type="text" class="col form-control" name="last-name" value="<?= $user['last_name']; ?>" disabled>
+        <div class="col">
+          <div class="form-floating mx-0">
+            <input type="text" class="form-control" name="last-name" placeholder="" disabled>
+            <label for="last-name" id="last-name-validation-feedback"><?= $user['last_name']; ?></label>
+          </div>
+        </div>
       </div>
-      <div class="row mb-3">
+      <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="username-">Username</label>
-        <input type="text" class="col form-control" name="username" value="<?= $user['username']; ?>" disabled>
+        <div class="col">
+          <div class="form-floating mx-0">
+            <input type="text" class="form-control" name="username" placeholder="" disabled>
+            <label for="username" id="username-validation-feedback"><?= $user['username']; ?></label>
+          </div>
+        </div>
       </div>
-      <div class="row mb-3">
+      <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="email">Email</label>
-        <input type="text" class="col form-control" name="email" value="<?= $user['email']; ?>" disabled>
+        <div class="col">
+          <div class="form-floating mx-0">
+            <input type="text" class="form-control" name="email" placeholder="" disabled>
+            <label for="email" id="email-validation-feedback"><?= $user['email']; ?></label>
+          </div>
+        </div>
       </div>
       <div class="row mb-3">
-        <input type="submit" class="col-auto btn btn-primary w-25" value="Edit">
+        <input type="button" class="col-auto btn btn-primary w-25" value="Edit" id="edit-submit">
+        <input type="submit" class="col-auto btn btn-primary w-25" value="Save" id="save-submit" hidden>
         <span class="col d-flex align-items-center mx-2"><a href="change_password.php" style="text-decoration: none;">Change Password</a></span>
       </div>
     </form>
