@@ -26,6 +26,12 @@ $_SESSION['last_name'] = $last_name;
 $_SESSION['username'] = $username;
 $_SESSION['email'] = $email;
 
+
+$_SESSION['flash_message'] = Array(
+	'message' => 'Your profile has been successfully updated!',
+	'status' => 'success'
+);
+
 header('Location: /templates/profile.php?id='.$_SESSION['user_id']);
 
 ?>

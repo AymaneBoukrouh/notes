@@ -8,6 +8,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 ?>
     <div class="text-center mb-3"><h3>Profile</h3></div>
     <form action="/modules/user/edit_profile.php" method="POST">
+      <?php if(isset($_SESSION['flash_message'])): ?>
+      <div class="alert alert-<?= $_SESSION['flash_message']['status'] ?>"><?= $_SESSION['flash_message']['message']; ?></div>
+      <?php unset($_SESSION['flash_message']); endif; ?>
       <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="first-name">First Name</label>
         <div class="col">
