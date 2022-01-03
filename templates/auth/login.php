@@ -5,11 +5,11 @@ session_start();
 if (isset($_SESSION['user_id'])) exit(header('Location: /templates/notes.php'));
 
 $TITLE = 'Notes';
-require_once('../includes/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
     <div class="text-center mb-3"><h3>Log In</h3></div>
-    <form action="../modules/login_module.php" method="POST">
+    <form action="/modules/auth/login.php" method="POST">
       <?php if(isset($_SESSION['flash_message'])): ?>
       <div class="alert alert-<?= $_SESSION['flash_message']['status'] ?>"><?= $_SESSION['flash_message']['message']; ?></div>
       <?php unset($_SESSION['flash_message']); endif; ?>
@@ -32,4 +32,4 @@ require_once('../includes/header.php');
         </div>
       </div>
     </form>
-<?php require_once('../includes/footer.php'); ?>
+<?php require_once('../../includes/footer.php'); ?>

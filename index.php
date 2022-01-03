@@ -1,1 +1,1 @@
-<?php header('Location: templates/login.php') ?>
+<?php header('Location: templates/auth/login.php') ?>

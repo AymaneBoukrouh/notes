@@ -2,12 +2,12 @@
 
 session_start();
 
-require_once('../modules/get_note_module.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_note.php');
 
 if ($note['user_id'] != $_SESSION['user_id']) exit(header('Location: /templates/notes.php'));
 
 $TITLE = $note['title'];
-require_once('../includes/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
     <a class="btn btn-primary go-back-button" href="notes.php">Go Back To Notes</a>
@@ -18,6 +18,6 @@ require_once('../includes/header.php');
     <div class="text-center mb-3"><h3><?= $note['title']; ?></h3></div>
     <div class="note note-content"><?= $note['content']; ?></div>
     <a class="btn btn-primary w-100 mb-1" href="edit_note.php?id=<?= $note['id']; ?>">Edit</a>
-    <a class="btn btn-danger w-100" href="../modules/delete_note_module.php?id=<?= $note['id']; ?>">Delete</a>
+    <a class="btn btn-danger w-100" href="/modules/note/delete_note.php?id=<?= $note['id']; ?>">Delete</a>
     </form>
-<?php require_once('../includes/footer.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'); ?>

@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $current_date = getdate();
 $year = strval($current_date['year']);
 $month = str_pad(strval($current_date['mon']), 2, '0', STR_PAD_LEFT);
@@ -12,24 +10,19 @@ $seconds = str_pad(strval($current_date['seconds']), 2, '0', STR_PAD_LEFT);
 
 $title = $_POST['note-title'];
 $content = $_POST['note-content'];
-$creation_datetime = "$year-$month-$day $hours:$minutes:$seconds";
+$last_edit_datetime = "$year-$month-$day $hours:$minutes:$seconds";
 
+$query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
+$query("
+	UPDATE note
+	SET
+		title = '$title',
+		content = '$content',
+		last_edit_datetime = '$last_edit_datetime'
 
-$DB = require_once('../includes/config.php');
-$mysqli = new mysqli($DB['HOST'], $DB['USER'], $DB['PASS'], $DB['NAME']);
+	WHERE id = ".$_GET['id'].";"
+);
 
-$user_id = $_SESSION['user_id'];
-$query = "
-	INSERT INTO note (user_id, title, content, creation_datetime)
-	VALUES ($user_id, '$title', '$content', '$creation_datetime');
-";
-
-$mysqli->query($query);
-
-$mysqli->commit();
-$mysqli->close();
-
-
-header('Location: /templates/notes.php');
+header('Location: /templates/note.php?id='.$_GET['id']);
 
 ?>

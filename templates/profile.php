@@ -1,13 +1,13 @@
 <?php
 
-require_once('../modules/get_user_module.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/user/get_user.php');
 
 $TITLE = 'Notes';
-require_once('../includes/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
     <div class="text-center mb-3"><h3>Profile</h3></div>
-    <form action="../modules/edit_profile_module.php" method="POST">
+    <form action="/modules/user/edit_profile.php" method="POST">
       <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="first-name">First Name</label>
         <div class="col">
@@ -50,4 +50,4 @@ require_once('../includes/header.php');
         <span class="col d-flex align-items-center mx-2"><a href="change_password.php" style="text-decoration: none;">Change Password</a></span>
       </div>
     </form>
-<?php require_once('../includes/footer.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'); ?>

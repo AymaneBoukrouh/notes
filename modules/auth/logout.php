@@ -3,6 +3,6 @@
 session_start();
 
 unset($_SESSION['user_id']);
-header('Location: /templates/login.php');
+header('Location: /templates/auth/login.php');
 
 ?>
