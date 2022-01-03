@@ -36,7 +36,7 @@ function update_signup_button () {
 }
 
 
-$('input').keyup(function () {
+$('input[name="first-name"],input[name="last-name"],input[name="username"],input[name="email"]').keyup(function () {
 	var re_name = /^[a-zA-Z ]+$/;
 	var re_username = /^[a-zA-Z0-9_]+$/;
 	var re_email = /^[a-zA-Z0-9_\-\.]+@([a-zA-Z0-9_\-]+\.)+[a-zA-Z0-9_\-]{2,4}$/;
