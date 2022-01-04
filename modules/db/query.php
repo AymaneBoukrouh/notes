@@ -1,7 +1,7 @@
 <?php
 
 return function ($query) {
-	$auth = require_once($_SERVER['DOCUMENT_ROOT'].'/modules/db/auth.php');
+	$auth = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/auth.php');
 	$mysqli = new mysqli(
 		$auth['HOST'],
 		$auth['USER'],
