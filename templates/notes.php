@@ -24,7 +24,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
       <div class="note-content"><?= $note['content']; ?></div>
     </div>
     <?php endforeach; ?>
-    <?php if (!$NOTES): ?>
+    <?php if (!$notes->num_rows): ?>
     <div class="empty-note text-muted">You don't have any notes yet!</div>
     <?php endif; ?>
     <a class="btn btn-primary w-100" href="add_note.php">+</a>
