@@ -20,16 +20,6 @@ function validate (element, valid, message) {
 }
 
 
-function invalidate (element) {
-	var name = $(element).attr('name');
-	var feedback_id = '#' + name + '-validation-feedback';
-	$(element).removeClass('is-invalid');
-	$(element).removeClass('is-valid');
-	$(feedback_id).removeClass('invalid-feedback');
-	$(feedback_id).removeClass('valid-feedback');	
-}
-
-
 function update_save_button () {
 	if (
 		$('#first-name-validation-feedback').hasClass('valid-feedback') &&
