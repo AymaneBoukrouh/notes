@@ -6,5 +6,8 @@
   <?php if (basename($_SERVER['PHP_SELF']) === 'profile.php'): ?>
   <script src="/assets/js/profile.js"></script>
   <?php endif; ?>
+  <?php if (basename($_SERVER['PHP_SELF']) === 'change_password.php'): ?>
+  <script src="/assets/js/change_password.js"></script>
+  <?php endif; ?>
 </body>
 </html>
