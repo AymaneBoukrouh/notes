@@ -5,7 +5,6 @@ function validate (element, valid, message) {
 	if (valid) {
 		$(element).removeClass('is-invalid');
 		$(element).addClass('is-valid');
-        $(element).addClass('border-info')
 		$(feedback_id).removeClass('invalid-feedback');
 		$(feedback_id).addClass('valid-feedback');
 	} else {
@@ -42,7 +41,14 @@ $('input[name="current-password"],input[name="new-password"],input[name="confirm
         case 'current-password':
 			if (val === '') validate(this, false, 'This field is required.');
 			else if (!re_length_8_64.test(val)) validate(this, false, 'Must be between 8 and 64 characters.');
-			else validate(this, true, 'Valid password.');
+			else {
+				$(this).removeClass('is-invalid');
+				$(this).removeClass('invalid-feedback');
+				$('#current-password-validation-feedback').html('Valid password.');
+				$('#current-password-validation-feedback').addClass('text-info');
+				$('#current-password-validation-feedback').show();
+			}
+
 			break;
 
     	case 'new-password':
