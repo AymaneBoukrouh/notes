@@ -20,7 +20,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         </div>
         <div class="col">
           <label class="form-label" for="password">Password</label>
-          <input type="password" class="form-control" name="password">
+          <div class="input-group">
+            <input type="password" class="form-control" name="password">
+            <span class="input-group-text"><i class="bi-eye-slash-fill" id="toggle-password"></i></span>
+          </div>
         </div>
       </div>
       <div class="row mb-3">

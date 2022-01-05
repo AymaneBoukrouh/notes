@@ -36,6 +36,19 @@ function update_signup_button () {
 }
 
 
+$('#toggle-password').click(function () {
+	if ($(this).hasClass('bi-eye-fill')) {
+		$(this).removeClass('bi-eye-fill');
+		$(this).addClass('bi-eye-slash-fill');
+		$('input[name="password"]').attr('type', 'password');
+	} else {
+		$(this).removeClass('bi-eye-slash-fill');
+		$(this).addClass('bi-eye-fill');
+		$('input[name="password"]').attr('type', 'text');
+	}
+})
+
+
 $('input[name="first-name"],input[name="last-name"],input[name="username"],input[name="email"],input[name="password"],input[name="confirm-password"]').keyup(function () {
 	var re_name = /^[a-zA-Z ]+$/;
 	var re_username = /^[a-zA-Z0-9_]+$/;

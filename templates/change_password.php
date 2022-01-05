@@ -14,18 +14,24 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
       <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="current-password">Current Password</label>
         <div class="col">
-          <div class="form-floating mx-0">
-            <input type="password" class="form-control is-invalid" name="current-password" placeholder="">
-            <label for="current-password" class="invalid-feedback" id="current-password-validation-feedback">This field is required</label>
+          <div class="row g-0">
+            <div class="col form-floating mx-0">
+              <input type="password" class="form-control is-invalid no-border-right-radius" name="current-password" placeholder="">
+              <label for="current-password" class="invalid-feedback" id="current-password-validation-feedback">This field is required</label>
+            </div>
+            <span class="col-auto input-group-text no-border-left-radius"><i class="bi-eye-slash-fill" id="toggle-current-password"></i></span>
           </div>
         </div>
       </div>
       <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="new-password">New Password</label>
         <div class="col">
-          <div class="form-floating mx-0">
-            <input type="password" class="form-control is-invalid" name="new-password" placeholder="">
-            <label for="new-password" class="invalid-feedback" id="new-password-validation-feedback">This field is required</label>
+          <div class="row g-0">
+            <div class="col form-floating mx-0">
+              <input type="password" class="form-control is-invalid no-border-right-radius" name="new-password" placeholder="">
+              <label for="new-password" class="invalid-feedback" id="new-password-validation-feedback">This field is required</label>
+            </div>
+            <span class="col-auto input-group-text no-border-left-radius"><i class="bi-eye-slash-fill" id="toggle-new-password"></i></span>
           </div>
         </div>
       </div>

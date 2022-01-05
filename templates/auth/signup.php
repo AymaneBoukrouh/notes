@@ -48,7 +48,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
           <div class="invalid-feedback d-block" id="password-validation-feedback">
             This field is required.
           </div>
-          <input type="password" class="form-control" name="password">
+          <div class="input-group">
+            <input type="password" class="form-control" name="password">
+            <span class="input-group-text"><i class="bi-eye-slash-fill" id="toggle-password"></i></span>
+          </div>
         </div>
         <div class="col">
           <label class="form-label mb-0" for="confirm-password">Confirm Password</label>

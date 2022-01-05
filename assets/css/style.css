@@ -104,10 +104,16 @@ header {
 	color: rgb(255, 100, 100);
 }
 
-.fv-help-block {
-	color: blue !important;
+.bi-eye-fill:hover, .bi-eye-slash-fill:hover {
+	cursor: pointer;
 }
 
-.has-success .fv-plugins-icon {
-	color: blue !important;
+.no-border-left-radius {
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+
+.no-border-right-radius {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
 }

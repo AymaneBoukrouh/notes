@@ -33,12 +33,30 @@ function update_save_button () {
 }
 
 
+$('#toggle-current-password,#toggle-new-password').click(function () {
+	if ($(this).hasClass('bi-eye-fill')) {
+		$(this).removeClass('bi-eye-fill');
+		$(this).addClass('bi-eye-slash-fill');
+		if ($(this).attr('id') === 'toggle-current-password')
+			$('input[name="current-password"]').attr('type', 'password');
+		else $('input[name="new-password"]').attr('type', 'password');
+	} else {
+		$(this).removeClass('bi-eye-slash-fill');
+		$(this).addClass('bi-eye-fill');
+		if ($(this).attr('id') === 'toggle-current-password')
+			$('input[name="current-password"]').attr('type', 'text');
+		else $('input[name="new-password"]').attr('type', 'text');
+	}
+})
+
+
 $('input[name="current-password"],input[name="new-password"],input[name="confirm-password"]').keyup(function () {
 	var re_length_8_64 = /^.{8,64}$/;
 
 	var val = $(this).val();
 	switch ($(this).attr('name')) {
         case 'current-password':
+        	$('#current-password-validation-feedback').removeClass('text-info');
 			if (val === '') validate(this, false, 'This field is required.');
 			else if (!re_length_8_64.test(val)) validate(this, false, 'Must be between 8 and 64 characters.');
 			else {
