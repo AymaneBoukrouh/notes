@@ -75,7 +75,7 @@ try {
 	$mail->send();
 
 	$_SESSION['flash_message'] = Array(
-		'message' => 'Your account has been successfully created! We have sent a verification email to '.$email,
+		'message' => 'Your account has been successfully created! A verification email has been sent to '.$email,
 		'status' => 'success'
 	);
 } catch (Exception $e) {

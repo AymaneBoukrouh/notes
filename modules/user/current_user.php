@@ -7,7 +7,7 @@ else return false;
 
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
 $current_user = $query("
-	SELECT id, first_name, last_name, username, email
+	SELECT id, first_name, last_name, username, email, verified
 	FROM user
 	WHERE id=$current_user_id;
 ")->fetch_assoc();
@@ -17,7 +17,8 @@ return Array(
 	'first_name' => $current_user['first_name'],
 	'last_name' => $current_user['last_name'],
 	'username' => $current_user['username'],
-	'email' => $current_user['email']
+	'email' => $current_user['email'],
+	'verified' => $current_user['verified']
 );
 
 ?>
