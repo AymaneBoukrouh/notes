@@ -1,10 +1,6 @@
 <?php
 
-session_start();
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_note.php');
-
-if ($note['user_id'] != $_SESSION['user_id']) exit(header('Location: /templates/notes.php'));
+$note = require($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_note.php');
 
 $TITLE = $note['title'];
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');

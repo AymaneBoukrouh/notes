@@ -12,6 +12,8 @@ $title = $_POST['note-title'];
 $content = $_POST['note-content'];
 $last_edit_datetime = "$year-$month-$day $hours:$minutes:$seconds";
 
+$note_id = $_GET['id'];
+
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
 $query("
 	UPDATE note
@@ -20,7 +22,7 @@ $query("
 		content = '$content',
 		last_edit_datetime = '$last_edit_datetime'
 
-	WHERE id = ".$_GET['id'].";"
+	WHERE id = $note_id;"
 );
 
 header('Location: /templates/note.php?id='.$_GET['id']);

@@ -31,5 +31,4 @@ $_SESSION['flash_message'] = Array(
 
 header('Location: /templates/profile.php');
 
-
 ?>

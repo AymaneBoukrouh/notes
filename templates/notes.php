@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
     <div class="text-center"><h3>Notes</h3></div>
-    <?php require_once($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_notes.php') ?>
+    <?php $notes = require($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_notes.php'); ?>
     <?php foreach($notes as $note): ?>
     <div class="note">
       <div class="d-flex justify-content-between">

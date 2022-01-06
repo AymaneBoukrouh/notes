@@ -1,9 +1,8 @@
 <?php
 
-session_start();
-
-$user_id = $_SESSION['user_id'];
+$current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
+$user_id = $current_user['id'];
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
-$notes = $query("SELECT * FROM note WHERE user_id=$user_id AND deleted=FALSE;");
+return $query("SELECT * FROM note WHERE user_id=$user_id AND deleted=FALSE;");
 
 ?>

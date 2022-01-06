@@ -82,11 +82,14 @@ $('input[name="first-name"],input[name="last-name"],input[name="username"],input
 			else {
 				username_input = $(this);
 				$.ajax({
-					url: 'http://localhost/modules/user/check_username.php',
+					url: 'http://localhost/modules/user/check_taken_json.php',
 					type: 'POST',
-					data: {username: val},
-					success: function (value) {
-						if (value) validate(username_input, true, 'Valid username.');
+					data: {
+						type: 'username',
+						value: val
+					},
+					success: function (taken) {
+						if (!taken) validate(username_input, true, 'Valid username.');
 						else validate(username_input, false, 'This username is taken.');
 						update_signup_button();
 					}
@@ -101,11 +104,14 @@ $('input[name="first-name"],input[name="last-name"],input[name="username"],input
 			else {
 				email_input = $(this);
 				$.ajax({
-					url: 'http://localhost/modules/user/check_email.php',
+					url: 'http://localhost/modules/user/check_taken_json.php',
 					type: 'POST',
-					data: {email: val},
-					success: function (value) {
-						if (value) validate(email_input, true, 'Valid email.');
+					data: {
+						type: 'email',
+						value: val
+					},
+					success: function (taken) {
+						if (!taken) validate(email_input, true, 'Valid email.');
 						else validate(email_input, false, 'An account with this email already exists.');
 						update_signup_button();
 					}

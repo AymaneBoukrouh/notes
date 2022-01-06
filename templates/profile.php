@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/modules/user/get_user.php');
+$current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
 
 $TITLE = 'Notes';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
@@ -16,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col">
           <div class="form-floating mx-0">
             <input type="text" class="form-control" name="first-name" placeholder="" disabled>
-            <label for="first-name" id="first-name-validation-feedback"><?= $user['first_name']; ?></label>
+            <label for="first-name" id="first-name-validation-feedback"><?= $current_user['first_name']; ?></label>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col">
           <div class="form-floating mx-0">
             <input type="text" class="form-control" name="last-name" placeholder="" disabled>
-            <label for="last-name" id="last-name-validation-feedback"><?= $user['last_name']; ?></label>
+            <label for="last-name" id="last-name-validation-feedback"><?= $current_user['last_name']; ?></label>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col">
           <div class="form-floating mx-0">
             <input type="text" class="form-control" name="username" placeholder="" disabled>
-            <label for="username" id="username-validation-feedback"><?= $user['username']; ?></label>
+            <label for="username" id="username-validation-feedback"><?= $current_user['username']; ?></label>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col">
           <div class="form-floating mx-0">
             <input type="text" class="form-control" name="email" placeholder="" disabled>
-            <label for="email" id="email-validation-feedback"><?= $user['email']; ?></label>
+            <label for="email" id="email-validation-feedback"><?= $current_user['email']; ?></label>
           </div>
         </div>
       </div>

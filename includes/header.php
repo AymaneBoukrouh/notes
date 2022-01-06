@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php $current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +18,9 @@
       <a class="user-menu-link" href="#" role="button" id="user-dropdown-menu" data-bs-toggle="dropdown" data-bs-offset="0,10" aria-expanded="false">
         <i class="user-menu-icon bi-person-circle"></i>
       </a>
-      <span class="user-menu-name"><?= $_SESSION['first_name'].' '.$_SESSION['last_name']; ?></span>
+      <span class="user-menu-name"><?= $current_user['first_name'].' '.$current_user['last_name']; ?></span>
       <ul class="dropdown-menu" aria-labelledby="user-dropdown-menu">
-        <li><a class="dropdown-item" href="/templates/profile.php?id=<?= $_SESSION['user_id']; ?>">Profile</a></li>
+        <li><a class="dropdown-item" href="/templates/profile.php">Profile</a></li>
         <li><a class="dropdown-item" href="/templates/notes.php">Notes</a></li>
         <li><a class="dropdown-item" href="/templates/add_note.php">Add Note</a></li>
         <li><a class="dropdown-item text-danger logout-button" href="/modules/auth/logout.php">Log Out</a></li>

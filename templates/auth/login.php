@@ -1,8 +1,8 @@
 <?php
 
-session_start();
+$current_user = $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
 
-if (isset($_SESSION['user_id'])) exit(header('Location: /templates/notes.php'));
+if ($current_user) exit(header('Location: /templates/notes.php'));
 
 $TITLE = 'Notes';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col-auto">
           <input type="submit" class="col btn btn-primary" value="Log In">
         </div>
-        <div class="col">
+        <div class="col"
           <span class="col d-flex align-items-center h-100">Don't have an account?&nbsp;<a href="signup.php" style="text-decoration: none">Sign Up</a></span>
         </div>
       </div>
