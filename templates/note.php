@@ -1,5 +1,7 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
+
 $note = require($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_note.php');
 
 $title = $note['title'];

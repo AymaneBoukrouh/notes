@@ -4,6 +4,6 @@ session_start();
 session_unset();
 session_destroy();
 
-header('Location: /templates/auth/login.php');
+exit(header('Location: /templates/auth/login.php'));
 
 ?>

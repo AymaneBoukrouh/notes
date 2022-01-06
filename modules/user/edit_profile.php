@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
 
 $first_name = $_POST['first-name'];
 $last_name = $_POST['last-name'];
@@ -52,6 +52,6 @@ $_SESSION['flash_message'] = Array(
 	'status' => 'success'
 );
 
-header('Location: /templates/profile.php');
+exit(header('Location: /templates/profile.php'));
 
 ?>

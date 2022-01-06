@@ -1,5 +1,7 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
+
 $current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
 
 $title = 'Profile - '.$current_user['first_name'].' '.$current_user['last_name'];

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
 
 $user_id = $_SESSION['user_id'];
 
@@ -43,6 +43,6 @@ $_SESSION['flash_message'] = Array(
 	'status' => 'success'
 );
 
-header('Location: /templates/profile.php');
+exit(header('Location: /templates/profile.php'));
 
 ?>

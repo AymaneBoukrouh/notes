@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/modules/user/get_user.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
 
 $title = 'Change Password';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
       <?php unset($_SESSION['flash_message']); endif; ?>
       <div class="row d-flex align-items-center mb-3">
         <label class="col-auto col-form-label w-25" for="current-password">Current Password</label>
-        <div class="col">
+        <div class="col"
           <div class="row g-0">
             <div class="col form-floating mx-0">
               <input type="password" class="form-control is-invalid no-border-right-radius" name="current-password" placeholder="">

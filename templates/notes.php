@@ -1,5 +1,7 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
+
 $title = 'Notes';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
