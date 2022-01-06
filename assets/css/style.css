@@ -117,3 +117,14 @@ header {
 	border-top-right-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
 }
+
+.input-info {
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='%230dcaf0' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>") !important;
+	border-color: var(--bs-info) !important;
+}
+
+.input-info:focus {
+	border-color: var(--bs-danger) !important;
+	//box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 0, 255, 0.5) !important;
+	box-shadow: 0 0 0 5px rgba(13, 202, 240, .3) !important;
+}

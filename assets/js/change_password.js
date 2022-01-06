@@ -56,15 +56,14 @@ $('input[name="current-password"],input[name="new-password"],input[name="confirm
 	var val = $(this).val();
 	switch ($(this).attr('name')) {
         case 'current-password':
+        	$(this).removeClass('input-info');
         	$('#current-password-validation-feedback').removeClass('text-info');
 			if (val === '') validate(this, false, 'This field is required.');
 			else if (!re_length_8_64.test(val)) validate(this, false, 'Must be between 8 and 64 characters.');
 			else {
-				$(this).removeClass('is-invalid');
-				$(this).removeClass('invalid-feedback');
-				$('#current-password-validation-feedback').html('Valid password.');
+				validate(this, true, 'Valid password.');
+				$(this).addClass('input-info');
 				$('#current-password-validation-feedback').addClass('text-info');
-				$('#current-password-validation-feedback').show();
 			}
 
 			break;
