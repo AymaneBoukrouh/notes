@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_SESSION['user_id'])) exit(header('Location: /templates/notes.php'));
 
-$TITLE = 'Notes';
+$title = 'Sign Up';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>

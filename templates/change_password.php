@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/modules/user/get_user.php');
 
-$TITLE = 'Notes';
+$title = 'Change Password';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-$TITLE = 'Notes';
+$title = 'Add Note';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>

@@ -2,7 +2,7 @@
 
 $note = require($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_note.php');
 
-$TITLE = $note['title'];
+$title = $note['title'];
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>

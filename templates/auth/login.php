@@ -4,7 +4,7 @@ $current_user = $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/curren
 
 if ($current_user) exit(header('Location: /templates/notes.php'));
 
-$TITLE = 'Notes';
+$title = 'Log In';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>

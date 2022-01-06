@@ -2,7 +2,7 @@
 
 $current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
 
-$TITLE = 'Notes';
+$title = 'Profile - '.$current_user['first_name'].' '.$current_user['last_name'];
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
