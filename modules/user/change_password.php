@@ -8,6 +8,20 @@ $current_password = $_POST['current-password'];
 $new_password = $_POST['new-password'];
 $confirm_password = $_POST['confirm-password'];
 
+
+if (!(
+    ($new_password === $confirm_password) &&
+    preg_match('/^.{8,64}$/', $new_password)
+)) {
+    $_SESSION['flash_message'] = Array(
+        'message' => 'An error occured, your password has not been updated..',
+        'status' => 'danger'
+    );
+
+    exit(header('Location: /templates/profile.php'));
+}
+
+
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
 $hashed_password = $query("SELECT password FROM user WHERE id=$user_id;")->fetch_assoc()['password'];
 
