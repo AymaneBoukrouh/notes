@@ -2,10 +2,16 @@
 
 session_start();
 
+$email = $_GET['email']
 $verification_token = $_GET['token'];
 
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
-$user = $query("SELECT id FROM user WHERE verification_token = '$verification_token'")->fetch_assoc();
+$user = $query("
+	SELECT id
+	FROM user
+	WHERE email = '$email'
+	  AND verification_token = '$verification_token'
+")->fetch_assoc();
 
 if ($user) {
 	$user_id = $user['id'];
