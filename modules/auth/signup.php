@@ -66,11 +66,11 @@ try {
 	$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 	$mail->Port = $auth['PORT'];
 
-	$mail->setFrom($auth['FROM'], 'PHP Notes');
+	$mail->setFrom($auth['FROM'], 'Notes');
 	$mail->addAddress($email);
 
 	$mail->Subject = 'Account Verification';
-	$mail->Body = "Welcome to PHP-Notes! Go to the link below to verify your account.\n\nhttps://notes.aymaneboukrouh.com/modules/auth/verify_account.php?email=$email&token=$verification_token";
+	$mail->Body = "Welcome to Notes! Go to the link below to verify your account.\n\nhttps://notes.aymaneboukrouh.com/modules/auth/verify_account.php?email=$email&token=$verification_token";
 
 	$mail->send();
 
