@@ -1,7 +1,8 @@
   </div>
-  <?php $host = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; ?>
+  <?php $host = (isset($_SERVER['HTTPS_PROTOCOL']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; ?>
   <script>
     const host = '<?= $host ?>';
+    alert(host);
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <?php switch (basename($_SERVER['PHP_SELF'])):
