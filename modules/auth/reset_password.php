@@ -24,9 +24,12 @@ if (!$user) {
     $reset_password_time_generated = DateTime::createFromFormat('Y-m-d H:i:s', $user['reset_password_time_generated']);
     $current_date = DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
     $date_diff = date_diff($current_date, $reset_password_time_generated);
-    $hours = $date_diff->format('%h');
 
-    if ($hours>24) {
+    $years = $date_diff->format('y');
+    $months = $date_diff->format('m');
+    $days = $date_diff->format('d');
+
+    if ($years || $months || $days) {
         $_SESSION['flash_message'] = Array(
             'message' => 'Reset Password Token Expired.',
             'status' => 'danger'
