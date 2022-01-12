@@ -1,7 +1,3 @@
-DROP ABLE IF EXISTS note;
-DROP TABLE IF EXISTS user;
-
-
 CREATE TABLE user (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	first_name VARCHAR(32) NOT NULL,
@@ -9,7 +5,10 @@ CREATE TABLE user (
 	username VARCHAR(16) UNIQUE NOT NULL,
 	email VARCHAR(255) UNIQUE NOT NULL,
 	password CHAR(60) NOT NULL,
-	verified BOOL DEFAULT FALSE
+	verification_token CHAR(128),
+	verified BOOL DEFAULT FALSE,
+	reset_password_token CHAR(128),
+	reset_password_time_generated DATETIME
 );
 
 

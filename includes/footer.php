@@ -5,6 +5,7 @@
     <?php case 'signup.php': ?><script src="/assets/js/signup.js"></script><?php break; ?>
     <?php case 'profile.php': ?><script src="/assets/js/profile.js"></script><?php break; ?>
     <?php case 'change_password.php': ?><script src="/assets/js/change_password.js"></script><?php break; ?>
+    <?php case 'reset_password.php': ?><script src="/assets/js/reset_password.js"></script><?php break; ?>
   <?php endswitch; ?>
 </body>
 </html>

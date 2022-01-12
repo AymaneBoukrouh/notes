@@ -13,7 +13,7 @@
 <body>
   <header><a href="https://www.github.com/AymaneBoukrouh/PHP-Notes/" class="github-link"><i class="bi-github"></i></a></header>
   <div class="main-container position-relative">
-    <?php if (!in_array(basename($_SERVER['PHP_SELF']), ['login.php', 'signup.php'])): ?>
+    <?php if (!in_array(basename($_SERVER['PHP_SELF']), ['login.php', 'signup.php', 'reset_password.php'])): ?>
     <div class="dropdown">
       <a class="user-menu-link" href="#" role="button" id="user-dropdown-menu" data-bs-toggle="dropdown" data-bs-offset="0,10" aria-expanded="false">
         <i class="user-menu-icon bi-person-circle"></i>
