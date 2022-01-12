@@ -30,9 +30,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
         <div class="col-auto">
           <input type="submit" class="col btn btn-primary" value="Log In">
         </div>
-        <div class="col"
-          <span class="col d-flex align-items-center h-100">Don't have an account?&nbsp;<a href="signup.php" style="text-decoration: none">Sign Up</a></span>
+        <div class="col">
+          <span class="col d-flex align-items-center h-100">Don't have an account?&nbsp;<a href="signup.php" style="text-decoration: none;">Sign Up</a></span>
         </div>
       </div>
+      <a href="reset_password_request.php" style="text-decoration: none;"><small>Forgot password?</small></a>
     </form>
 <?php require_once('../../includes/footer.php'); ?>
