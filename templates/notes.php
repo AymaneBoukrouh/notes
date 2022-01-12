@@ -2,11 +2,16 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/modules/auth/login_required.php');
 
+$current_user = require($_SERVER['DOCUMENT_ROOT'].'/modules/user/current_user.php');
+
 $title = 'Notes';
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
 
 ?>
     <div class="text-center"><h3>Notes</h3></div>
+    <?php if(!$current_user['verified']): ?>
+    <div class="alert alert-info">Check your email to verify your account!</div>
+    <?php endif; ?>
     <?php $notes = require($_SERVER['DOCUMENT_ROOT'].'/modules/note/get_notes.php'); ?>
     <?php foreach($notes as $note): ?>
     <div class="note">
