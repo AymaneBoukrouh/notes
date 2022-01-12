@@ -82,7 +82,7 @@ $('input[name="first-name"],input[name="last-name"],input[name="username"],input
 			else {
 				username_input = $(this);
 				$.ajax({
-					url: 'http://localhost/modules/user/check_taken_json.php',
+					url: host + '/modules/user/check_taken_json.php',
 					type: 'POST',
 					data: {
 						type: 'username',
@@ -104,7 +104,7 @@ $('input[name="first-name"],input[name="last-name"],input[name="username"],input
 			else {
 				email_input = $(this);
 				$.ajax({
-					url: 'http://localhost/modules/user/check_taken_json.php',
+					url: host + '/modules/user/check_taken_json.php',
 					type: 'POST',
 					data: {
 						type: 'email',
