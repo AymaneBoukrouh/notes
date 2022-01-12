@@ -1,15 +1,28 @@
-# PHP Notes
+# Notes
 
 ### About
 
-A very simple Web Application for managing simple notes written in PHP
+A very simple Web Application for simple note management written in PHP
 
-### Configuration
+It is hosted on [notes.aymaneboukrouh.com](https://notes.aymaneboukrouh.com)
 
-The database used is MySQL, authentication details are located in `includes/config.php`
+### Features
 
-Initiate the database using the SQL file located in `assets/create_db.sql`
+- User Login System, Email Verification, Password Reset
+- Note Management: Add, Edit, Delete
 
-### Link
+### Requirements
 
-The website is hosted on: [notes.aymaneboukrouh.com](https://notes.aymaneboukrouh.com)
+- Apache
+- MySQL
+- PHPMailer
+
+### Initialization
+
+- Initialize MySQL database by running `assets/db/init_db.sql`
+- Set environment variables in Apache
+
+### Configuration Files
+
+- MySQL authentication `modules/db/auth.php`
+- SMTP authentication `modules/phpmailer/auth.php`
