@@ -2,7 +2,7 @@
 
 session_start();
 
-$email = $_GET['email']
+$email = $_GET['email'];
 $verification_token = $_GET['token'];
 
 $query = require($_SERVER['DOCUMENT_ROOT'].'/modules/db/query.php');
