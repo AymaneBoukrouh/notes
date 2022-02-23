@@ -19,7 +19,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
               <input type="password" class="form-control is-invalid no-border-right-radius" name="current-password" placeholder="">
               <label for="current-password" class="invalid-feedback" id="current-password-validation-feedback">This field is required</label>
             </div>
-            <span class="col-auto input-group-text no-border-left-radius"><i class="bi-eye-slash-fill" id="toggle-current-password"></i></span>
+            <span class="col-auto input-group-text no-border-left-radius border border-5"><i class="bi-eye-slash-fill" id="toggle-current-password"></i></span>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/header.php');
               <input type="password" class="form-control is-invalid no-border-right-radius" name="new-password" placeholder="">
               <label for="new-password" class="invalid-feedback" id="new-password-validation-feedback">This field is required</label>
             </div>
-            <span class="col-auto input-group-text no-border-left-radius"><i class="bi-eye-slash-fill" id="toggle-new-password"></i></span>
+            <span class="col-auto input-group-text no-border-left-radius border border-5"><i class="bi-eye-slash-fill" id="toggle-new-password"></i></span>
           </div>
         </div>
       </div>
